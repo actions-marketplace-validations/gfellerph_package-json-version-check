@@ -1,5 +1,7 @@
 # GitHub Action to detect changes in package.json version
 
+> Forked from https://github.com/MontyD/package-json-updated-action
+
 This action outputs a variable 'has-updated' indicating that the package.json version was updated in the most recent commit.
 
 ## Inputs

@@ -1,6 +1,6 @@
 {
-  "name": "package-json-updated-action",
-  "version": "1.0.1",
+  "name": "@swisspost/package-json-version-check",
+  "version": "1.0.0",
   "description": "A GitHub Action which indicates when the package.json version has updated in the most recent commit",
   "main": "index.js",
   "scripts": {},
@@ -10,10 +10,10 @@
     "npm",
     "versioning"
   ],
-  "author": "Monty Dawson <hello@montydawson.co.uk>",
-  "license": "MIT",
+  "author": "Swiss Post <oss@post.ch>",
+  "license": "Apache-2.0",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/github": "^2.0.0"
+    "@actions/core": "1.10.0",
+    "@actions/github": "5.1.1"
   }
 }
