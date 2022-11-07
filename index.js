@@ -1,10 +1,10 @@
 const { setOutput, setFailed } = require("@actions/core");
-const { GitHub, context } = require("@actions/github");
+const github = require("@actions/github");
 
 const getPackageJson = async (ref, octokit) => {
   const packageJSONData = (
     await octokit.repos.getContents({
-      ...context.repo,
+      ...github.context.repo,
       path: process.env["INPUT_PATH"] || "package.json",
       ref,
     })
@@ -21,12 +21,12 @@ const run = async () => {
     throw new Error("GITHUB_TOKEN not provided");
   }
 
-  const octokit = new GitHub(token);
-  const currentRef = context.sha;
+  const octokit = github.getOctokit(token);
+  const currentRef = github.context.sha;
   const previousRef = (
     (
       await octokit.repos.getCommit({
-        ...context.repo,
+        ...github.context.repo,
         ref: currentRef,
       })
     ).data.parents[0] || {}
